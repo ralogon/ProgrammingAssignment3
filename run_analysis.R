@@ -73,7 +73,8 @@ X_labeled_subject <- cbind(X_labeled, subject)
 final_dataset <- X_labeled_subject %>% 
                  group_by(ActivityNames, Subject) %>% 
                  summarise_all(funs(mean))
-          
+
+# Write dataset to a .txt file          
 write.table(final_dataset, 
             '../../Assignment Submission/week4AssignmentDataset.txt', 
             row.names = FALSE)
