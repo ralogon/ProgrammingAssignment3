@@ -71,8 +71,9 @@ X_labeled_subject <- cbind(X_labeled, subject)
 
 # Obtain mean of all variables for each activity and user
 final_dataset <- X_labeled_subject %>% 
-                 group_by(ActivityNames, ubject) %>% 
+                 group_by(ActivityNames, Subject) %>% 
                  summarise_all(funs(mean))
           
-
-
+write.table(final_dataset, 
+            '../../Assignment Submission/week4AssignmentDataset.txt', 
+            row.names = FALSE)
